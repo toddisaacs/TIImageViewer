@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
+public class ImageViewController: UIViewController {
   
   var scrollView:UIScrollView!
   var imageView:UIImageView!
@@ -38,7 +38,7 @@ class ImageViewController: UIViewController {
   
   var index:Int = 0
   
-  required init(image: UIImage) {
+  required public init(image: UIImage) {
     super.init(nibName: nil, bundle: nil)
     
     self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
@@ -54,12 +54,12 @@ class ImageViewController: UIViewController {
   }
   
   
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
   
   
-  override func viewDidLayoutSubviews() {
+  override public func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     resizeViewToFit(animated: false)
     centerView()
@@ -240,19 +240,19 @@ class ImageViewController: UIViewController {
 
 extension ImageViewController: UIScrollViewDelegate {
   
-  func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+  public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return imageView
   }
   
-  func scrollViewDidZoom(_ scrollView: UIScrollView) {
+  public func scrollViewDidZoom(_ scrollView: UIScrollView) {
     centerView()
   }
   
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+  public func scrollViewDidScroll(_ scrollView: UIScrollView) {
     view.layoutIfNeeded()
   }
   
-  func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+  public func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
     delegate?.imageViewWillBeginZooming?()
   }
 }

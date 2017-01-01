@@ -6,7 +6,7 @@
 
 import UIKit
 
-class ImageViewer: UIPageViewController {
+public class ImageViewer: UIPageViewController {
   
   public var currentIndex: Int = 0
   public var images: [UIImage] = []
@@ -15,7 +15,7 @@ class ImageViewer: UIPageViewController {
   var doubleTap:UITapGestureRecognizer!
   
   
-  required init(images: [UIImage], startIdx: Int, options: [String : Any]? = nil) {
+  public required init(images: [UIImage], startIdx: Int, options: [String : Any]? = nil) {
     super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: options)
     
     currentIndex = startIdx
@@ -23,23 +23,23 @@ class ImageViewer: UIPageViewController {
   }
   
   
-  required init(options: [String : Any]? = nil) {
+  public required init(options: [String : Any]? = nil) {
     super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: options)
   }
   
   
-  required init?(coder: NSCoder) {
+  public required init?(coder: NSCoder) {
     super.init(coder: coder)
   }
   
   
-  static func show(fromController: UIViewController, image:UIImage, fullScreen:Bool) {
+  public static func show(fromController: UIViewController, image:UIImage, fullScreen:Bool) {
     let imageController = ImageViewController(image: image)
     imageController.show(fromController: fromController, fullScreen: fullScreen)
   }
   
   //this just feels dirty but using till I figure out a better way
-  static func show(from: UIViewController, images:[UIImage], startIndex:Int, fullScreen:Bool, spacing: Int = 8) -> ImageViewer {
+  public static func show(from: UIViewController, images:[UIImage], startIndex:Int, fullScreen:Bool, spacing: Int = 8) -> ImageViewer {
     let spacingStr = String(spacing)
     
     let imageViewer = ImageViewer(images: images,
@@ -90,13 +90,13 @@ class ImageViewer: UIPageViewController {
   }
   
   
-  override func viewWillDisappear(_ animated: Bool) {
+  override public func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     
   }
   
   
-  override func viewWillAppear(_ animated: Bool) {
+  override public func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     if let nav = navigationController {
