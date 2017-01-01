@@ -10,6 +10,8 @@
 		323960F81E19670C00764FA7 /* TIImageViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 323960EE1E19670C00764FA7 /* TIImageViewer.framework */; };
 		323960FD1E19670C00764FA7 /* TIImageViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323960FC1E19670C00764FA7 /* TIImageViewerTests.swift */; };
 		323960FF1E19670C00764FA7 /* TIImageViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 323960F11E19670C00764FA7 /* TIImageViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		323961091E19674200764FA7 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323961081E19674200764FA7 /* ImageViewController.swift */; };
+		3239610B1E19678600764FA7 /* ImageViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3239610A1E19678600764FA7 /* ImageViewer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		323960F71E19670C00764FA7 /* TIImageViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TIImageViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		323960FC1E19670C00764FA7 /* TIImageViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIImageViewerTests.swift; sourceTree = "<group>"; };
 		323960FE1E19670C00764FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323961081E19674200764FA7 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		3239610A1E19678600764FA7 /* ImageViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				323960F11E19670C00764FA7 /* TIImageViewer.h */,
 				323960F21E19670C00764FA7 /* Info.plist */,
+				323961081E19674200764FA7 /* ImageViewController.swift */,
+				3239610A1E19678600764FA7 /* ImageViewer.swift */,
 			);
 			path = TIImageViewer;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 					323960ED1E19670C00764FA7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9C759Q4CFH;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					323960F61E19670C00764FA7 = {
@@ -198,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				323961091E19674200764FA7 /* ImageViewController.swift in Sources */,
+				3239610B1E19678600764FA7 /* ImageViewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +331,7 @@
 		323961031E19670C00764FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9C759Q4CFH;
@@ -334,6 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teisaacs.TIImageViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +352,7 @@
 		323961041E19670C00764FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9C759Q4CFH;
@@ -360,6 +372,7 @@
 		323961061E19670C00764FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9C759Q4CFH;
 				INFOPLIST_FILE = TIImageViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +385,7 @@
 		323961071E19670C00764FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9C759Q4CFH;
 				INFOPLIST_FILE = TIImageViewerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
