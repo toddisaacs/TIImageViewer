@@ -46,7 +46,7 @@ public class ImageViewer: UIPageViewController {
                                   startIdx: startIndex,
                                   options: [UIPageViewControllerOptionInterPageSpacingKey: spacingStr])
     
-    //imageViewer.view.backgroundColor = UIColor.white
+    imageViewer.view.backgroundColor = UIColor.white
     imageViewer.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
     
     from.definesPresentationContext = !fullScreen
