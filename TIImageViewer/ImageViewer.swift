@@ -119,7 +119,7 @@ public class ImageViewer: UIPageViewController {
     }
   }
     
-  func share() {
+  @objc func share() {
     let image = images[currentIndex]
         
     let controller = UIActivityViewController.init(activityItems: [image, shareMessage], applicationActivities: nil)
@@ -127,7 +127,7 @@ public class ImageViewer: UIPageViewController {
   }
   
   
-  func handleSingleTap(gesture: UITapGestureRecognizer) {
+  @objc func handleSingleTap(gesture: UITapGestureRecognizer) {
     if let nav = navigationController {
         let hideFlag = !nav.isNavigationBarHidden
       setToolbarVisibilty(hidden: hideFlag)
@@ -145,12 +145,12 @@ public class ImageViewer: UIPageViewController {
   }
   
   
-  func handleDoubleTap(gesture: UITapGestureRecognizer) {
+  @objc func handleDoubleTap(gesture: UITapGestureRecognizer) {
     //this is just a placeholder to delay the single so we can recognize the image double tap
   }
   
   
-  func handleDone() {
+  @objc func handleDone() {
     dismiss(animated: true, completion: nil)
   }
   

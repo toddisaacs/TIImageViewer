@@ -198,11 +198,11 @@ public class ImageViewController: UIViewController {
   }
   
   
-  func handleSwipeDown(gesture: UISwipeGestureRecognizer) {
+  @objc func handleSwipeDown(gesture: UISwipeGestureRecognizer) {
     dismiss(animated: true, completion: nil)
   }
   
-  func handleDoubleTap(gesture: UITapGestureRecognizer) {
+  @objc func handleDoubleTap(gesture: UITapGestureRecognizer) {
     zoomFullScreenHeightOrWidth()
   }
   
