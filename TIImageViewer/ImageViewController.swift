@@ -41,6 +41,7 @@ public class ImageViewController: UIViewController {
   required public init(image: UIImage) {
     super.init(nibName: nil, bundle: nil)
     
+    self.scrollView.contentInsetAdjustmentBehavior = .never
     self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
     
     //adjust the layout margins to remove them
@@ -100,7 +101,7 @@ public class ImageViewController: UIViewController {
     imageView = UIImageView(image:  image)
     imageView.image = image
     
-    imageView.contentMode = UIViewContentMode.scaleAspectFit
+    imageView.contentMode = UIView.ContentMode.scaleAspectFit
     imageView.isUserInteractionEnabled = true
     scrollView.addSubview(imageView)
     
@@ -232,7 +233,7 @@ public class ImageViewController: UIViewController {
   public func centerView() {
     let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
     let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
-    self.scrollView.contentInset = UIEdgeInsetsMake(offsetY, offsetX, 0, 0)
+    self.scrollView.contentInset = UIEdgeInsets.init(top: offsetY, left: offsetX, bottom: 0, right: 0)
   }
 }
 

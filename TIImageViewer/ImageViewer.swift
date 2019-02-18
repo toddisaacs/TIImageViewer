@@ -75,7 +75,7 @@ public class ImageViewer: UIPageViewController {
     dataSource = self
     delegate = self
     
-    automaticallyAdjustsScrollViewInsets = false
+    //automaticallyAdjustsScrollViewInsets = false
     
     doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
     doubleTap.numberOfTapsRequired = 2
