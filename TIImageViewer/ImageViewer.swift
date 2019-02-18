@@ -17,15 +17,14 @@ public class ImageViewer: UIPageViewController {
   var showToolBar = false
   var shareMessage = ""
   
-  public required init(images: [UIImage], startIdx: Int, options: [String : Any]? = nil) {
+  public required init(images: [UIImage], startIdx: Int, options: [UIPageViewController.OptionsKey : Any]? = nil) {
     super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: options)
-    
     currentIndex = startIdx
     self.images = images
   }
   
   
-  public required init(options: [String : Any]? = nil) {
+  public required init(options: [UIPageViewController.OptionsKey : Any]? = nil) {
     super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: options)
   }
   
@@ -46,7 +45,7 @@ public class ImageViewer: UIPageViewController {
     
     let imageViewer = ImageViewer(images: images,
                                   startIdx: startIndex,
-                                  options: [UIPageViewControllerOptionInterPageSpacingKey: spacingStr])
+                                  options: [UIPageViewController.OptionsKey.interPageSpacing: spacingStr])
     
     imageViewer.view.backgroundColor = UIColor.white
     imageViewer.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

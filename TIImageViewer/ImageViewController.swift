@@ -40,10 +40,7 @@ public class ImageViewController: UIViewController {
   
   required public init(image: UIImage) {
     super.init(nibName: nil, bundle: nil)
-    
-    self.scrollView.contentInsetAdjustmentBehavior = .never
-    self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-    
+
     //adjust the layout margins to remove them
     self.view.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     self.image = image
@@ -86,6 +83,8 @@ public class ImageViewController: UIViewController {
     scrollView.showsVerticalScrollIndicator = true
     scrollView.isUserInteractionEnabled = true
     scrollView.isScrollEnabled = true
+    
+    scrollView.contentInsetAdjustmentBehavior = .never
     
     let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeDown))
     swipeDownGesture.direction = .down
